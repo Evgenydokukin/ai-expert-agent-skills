@@ -1,0 +1,15 @@
+interface:
+  display_name: "Создание кейса ai-expert.pro"
+  short_description: "Сильный кейс из локальных материалов"
+  default_prompt: "Используй $create-ai-expert-case, чтобы создать или улучшить мой кейс из указанных локальных материалов."
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "ai-expert"
+      description: "Contractor MCP для управления собственными кейсами ai-expert.pro"
+      transport: "streamable_http"
+      url: "https://dd.ai-expert.pro/api/mcp/contractor"
+
+policy:
+  allow_implicit_invocation: true
