@@ -37,7 +37,7 @@ Read [references/case-authoring.md](references/case-authoring.md) before authori
      and headers;
    - call `finalize_case_image_upload`;
    - reference the returned `media.id` in the cover or document.
-   Never copy a local path or signed URL into the case text.
+   Never copy a local path, upload URL, or upload authorization header into the case text.
 7. Call `validate_case`.
 8. If the case is complete and substantive, do not start a questionnaire. If validation
    or the evidence shows a meaningful gap or a valuable strengthening opportunity, ask
@@ -60,7 +60,8 @@ Read [references/case-authoring.md](references/case-authoring.md) before authori
   characteristic.
 - Ask when sources conflict; do not choose a convenient version.
 - Propose structure and wording freely, but mark a forecast or target as such.
-- Do not put local source content, local paths, full case text, or signed URLs into logs.
+- Do not put local source content, local paths, full case text, upload URLs, or upload
+  authorization tokens into logs.
 - Manage only the authenticated contractor's own cases. Never attempt moderation,
   approval, rejection, administrative publication, or access to another contractor's
   case.

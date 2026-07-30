@@ -74,8 +74,9 @@ Only upload an image after the contractor explicitly chooses it for publication.
 the exact file locally first. Do not upload folders, source documents, hidden files,
 screenshots containing personal data, or convenient nearby images.
 
-The signed upload URL is temporary transport data. Do not quote it in chat, write it to
-the case, or include it in a report. After finalization, use only the returned media ID.
+The upload URL and its authorization header are temporary transport data. Do not quote
+them in chat, write them to the case, or include them in a report. After finalization,
+use only the returned media ID.
 
 ## Submission boundary
 
