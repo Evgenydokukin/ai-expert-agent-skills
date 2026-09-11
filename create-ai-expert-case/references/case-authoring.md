@@ -4,6 +4,14 @@ The live `get_case_form_spec` response is the source of truth for field names, s
 limits, examples, and readiness. This guide defines the reasoning process and must not
 be used as a stale duplicate of the form specification.
 
+This file governs evidence discipline and the editing workflow.
+[case-intake.md](case-intake.md) governs collection: the five anchors that must be
+answered or explicitly declared unavailable before submission.
+[marketing-hook.md](marketing-hook.md) governs presentation: which confirmed fact leads,
+how it's phrased, and what order the `doc_json` blocks take. Follow all three — never let
+marketing framing override evidence discipline, and never let a tidy-looking draft
+substitute for a missing anchor.
+
 ## Evidence discipline
 
 Build a private working ledger before drafting:
@@ -25,6 +33,10 @@ clearly supported. Do not silently resolve contradictions.
 
 ## What makes a substantive case
 
+The list below is completeness, not reader-facing order — a reader must not have to
+reach point 5 to find out what they'd get. See marketing-hook.md for the order the
+finished case should actually present these in (strongest confirmed result first).
+
 A strong case normally lets a reader understand:
 
 1. Who had the problem and in what operating context, without exposing confidential
@@ -38,20 +50,36 @@ A strong case normally lets a reader understand:
 Not every case has quantitative metrics. A precise qualitative result is better than an
 invented number. Empty optional fields are acceptable when no evidence exists.
 
-## Conditional brainstorm
+### Structure minimum
 
-Do not ask questions merely because optional fields are empty. Start a round only when
-an answer could remove a blocker, resolve a contradiction, or materially improve the
-reader's understanding or credibility.
+A case body that is one long paragraph is not acceptable, however well written. The
+showcase reader scans; an undivided wall of text is skipped whatever it says. Split the
+body into `doc_json` blocks — heading, paragraph, list, metrics, steps, callout — in the
+order marketing-hook.md prescribes. A body worth publishing normally runs to at least
+five or six blocks, and a confirmed result belongs in `result_headline` or a `metrics`
+block rather than buried mid-paragraph.
+
+## Brainstorm after intake
+
+The intake anchors (case-intake.md) are mandatory — they are collected before the draft
+exists, and an unanswered anchor always justifies a round.
+
+Beyond them, do not ask questions merely because optional fields are empty. Start a round
+only when an answer could remove a blocker, resolve a contradiction, or materially
+improve the reader's understanding or credibility.
 
 Rank questions by expected value:
 
 1. submission blockers and source contradictions;
-2. problem and baseline context;
-3. what changed and how the solution works;
-4. confirmed outcomes and how they were measured;
-5. constraints, human oversight, scale, and reusable process detail;
-6. optional color such as a real quote or selected image.
+2. a missing confirmed number or precise qualitative outcome needed to drive the
+   headline, subtitle, or `result_headline` — a case with a clear before/after but no
+   nameable result is a high-value gap even when nothing formally blocks submission,
+   because a hookless title doesn't get read on the showcase;
+3. problem and baseline context;
+4. what changed and how the solution works;
+5. how the outcome was measured and its limits;
+6. constraints, human oversight, scale, and reusable process detail;
+7. optional color such as a real quote or selected image.
 
 Ask only 2–3 questions per round. Keep them concrete and answerable. Where useful,
 offer response shapes without suggesting facts, for example: “Можно ответить без точных
