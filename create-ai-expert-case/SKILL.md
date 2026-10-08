@@ -1,6 +1,6 @@
 ---
 name: create-ai-expert-case
-description: Create or improve an ai-expert.pro contractor case from user-selected local files, notes, images, and answers through the contractor MCP. Use when a contractor asks Codex or Claude Code to prepare, edit, validate, strengthen, or submit their own case while keeping source files local. Также: «оформи кейс», «подготовь кейс», «доработай кейс», «отправь кейс на ai-expert.pro».
+description: "Create or improve an ai-expert.pro contractor case from user-selected local files, notes, images, and answers through the contractor MCP. Use when a contractor asks Codex or Claude Code to prepare, edit, validate, strengthen, or submit their own case while keeping source files local. Также: «оформи кейс», «подготовь кейс», «доработай кейс», «отправь кейс на ai-expert.pro»."
 ---
 
 # Кейс эксперта на ai-expert.pro
