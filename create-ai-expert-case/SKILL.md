@@ -47,7 +47,7 @@ every case must cover), and [references/marketing-hook.md](references/marketing-
    - confirmed facts;
    - contradictions that need a question;
    - missing information;
-   - selected publishable images.
+   - selected publishable images and videos.
 7. Create a new draft with `create_case`, or load the specified case with `get_case`.
    Fill or update known fields, `doc_json`, processes, and questions without asking for
    approval for each write. Use `update_case`, `replace_case_processes`, and
@@ -64,6 +64,19 @@ every case must cover), and [references/marketing-hook.md](references/marketing-
    - call `finalize_case_image_upload`;
    - reference the returned `media.id` in the cover or document.
    Never copy a local path, upload URL, or upload authorization header into the case text.
+   For each video explicitly selected for publication (any format — MOV, MP4, MKV, screen
+   recording; up to 2 GB and 15 minutes):
+   - inspect its exact byte size locally;
+   - call `begin_case_video_upload`;
+   - PUT every part `n = 1…part_count` to `${upload_url}/parts/${n}` with the returned
+     headers and the file bytes `[(n-1)*part_size, n*part_size)`; retry a failed part —
+     repeats are safe; after a long interruption GET `upload_url` with the same headers
+     to see `received_parts` and send only the missing ones;
+   - call `finalize_case_video_upload`;
+   - add a `{ "type": "video", "video_id": …, "caption": … }` block next to the text it
+     demonstrates. GD compresses the video itself (several minutes); check `get_case` →
+     `videos[].status` and wait for `ready` before submitting. On `failed`, tell the
+     contractor `error_message` in plain words.
 9. Call `validate_case`.
 10. Ask the 2–3 highest-value remaining questions in one short round whenever validation
     or the evidence shows a gap or a valuable strengthening opportunity. An anchor that

@@ -106,6 +106,17 @@ The upload URL and its authorization header are temporary transport data. Do not
 them in chat, write them to the case, or include them in a report. After finalization,
 use only the returned media ID.
 
+## Videos
+
+Same rule as images: upload a video only after the contractor explicitly chooses that
+exact file for publication. Never upload raw call recordings, screen recordings that show
+client personal data, or a whole folder of clips. Prefer short videos (1–3 minutes) that
+show the solution working; a long recording is better trimmed by the contractor first.
+
+The upload URL and its authorization header are temporary transport data — same handling
+as for images. The original file is deleted by GD after compression; only the compressed
+version is published.
+
 ## Submission boundary
 
 Draft creation and editing are autonomous. Submission is different:
