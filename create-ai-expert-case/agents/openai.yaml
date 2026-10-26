@@ -9,7 +9,7 @@ dependencies:
       value: "ai-expert"
       description: "Contractor MCP для управления собственными кейсами ai-expert.pro"
       transport: "streamable_http"
-      url: "https://dd.ai-expert.pro/api/mcp/contractor"
+      url: "https://dd-ru.ai-expert.pro/api/mcp/contractor"
 
 policy:
   allow_implicit_invocation: true
